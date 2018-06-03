@@ -60,7 +60,7 @@ class PW():
         for i in self.passwd:
             bytepass += bytes((i,))
             print(bytes((i,)))
-        print(bytepass)
+        print(str(bytepass))
 
     def set_passwd(self,passwd):
         self.passwd = passwd

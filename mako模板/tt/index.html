@@ -1,0 +1,19 @@
+## coding=utf-8
+<%include file="base"/>
+Hello ${name.upper()}!
+% for i in lis:
+    % if i != 5:
+        <li>${loop.index}:${i}</li>
+    % endif
+% endfor
+
+## 这是注释
+<%doc>
+    多行注释
+</%doc>
+<%
+
+    x = 'lyt'
+    x.upper()
+%>
+${x}
