@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ajax上传文件</title>
+</head>
+<body>
+<form id="formA" method="POST" action="/upload" enctype="multipart/form-data">
+    <input type="text" name="username" id="username">
+    <input type="file" name="pic" id="pic" multiple="multiple">
+    <input type="button" value="FormData提交一个Form" onclick="sub1()">
+    <input type="button" value="FormData添加数据后提交" onclick="sub2()">
+</form>
+</body>
+<script>
+    function sub1() {
+        let form = document.getElementById('formA');
+        let data = new FormData(form);
+        let xhr = new XMLHttpRequest();
+        xhr.onreadystatechange = function(){
+            if(xhr.readyState == 4 && xhr.status==200){
+                alert(xhr.responseText);
+            }
+        };
+        xhr.open('POST','/upload');
+        xhr.send(data)
+    }
+
+    function sub2() {
+        let username = document.getElementById('username');
+        let pics = document.getElementById('pic');
+        let data = new FormData();
+        data.append('username',username.value);
+        for(let pic of pics.files){
+            data.append('pic',pic);
+        }
+        let xhr = new XMLHttpRequest();
+        xhr.onreadystatechange = function(){
+            if(xhr.readyState == 4 && xhr.status==200){
+                alert(xhr.responseText);
+            }
+        };
+        xhr.open('POST','/upload');
+        xhr.send(data)
+    }
+</script>
+</html>

@@ -1,6 +1,6 @@
 """
 Bottle is a fast and simple mirco-framework for small web-applications. It
-offers request dispatching (Routes) with url parameter support, Templates,
+offers request dispatching (Routes) with url parameter support, templates,
 key/value Databases, a build-in HTTP Server? and adapters for many third party
 WSGI/HTTP-server and template engines. All in a single file and with no
 dependencies other than the Python Standard Library.
@@ -574,7 +574,7 @@ def run(server=WSGIRefServer, host='127.0.0.1', port=8080, optinmize = False, **
 
 
 
-# Templates
+# templates
 class TemplateError(BottleException): pass
 class TemplateNotFoundError(BottleException): pass
 
